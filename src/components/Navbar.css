@@ -1,0 +1,171 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+
+  position: static;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Logo */
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #00e5ff, #7c4dff);
+
+  background-clip: text;            /* Standard */
+  -webkit-background-clip: text;    /* Chrome/Safari */
+
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+  transition: 0.3s;
+}
+
+.logo::after {
+  content: "GPU Store";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  color: #00e5ff;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+/* Links */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Underline animation */
+.nav-links a:not(.login-btn):not(.signup-btn)::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00e5ff;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:not(.login-btn):not(.signup-btn):hover::after {
+  width: 100%;
+} 
+
+.nav-links a:hover {
+  color: #00e5ff;
+}
+
+/* Buttons */
+.login-btn,
+.signup-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Login button */
+.login-btn {
+  border: 1px solid #00e5ff;
+}
+
+.login-btn:hover {
+  background: #00e5ff;
+  color: black;
+}
+
+/* Signup button */
+.signup-btn {
+  background: linear-gradient(45deg, #00e5ff, #00bcd4);
+  color: black;
+}
+
+.signup-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00e5ff;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide menu initially */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.4s ease;
+  }
+
+  /* When menu is open */
+  .nav-links.open {
+    max-height: 500px; /* enough to show all items */
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .login-btn,
+  .signup-btn {
+    width: 80%;
+    text-align: center;
+  }
+}

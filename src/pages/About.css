@@ -1,0 +1,42 @@
+.about{
+  padding:60px;
+  text-align:center;
+}
+
+.about h1{
+  margin-bottom:20px;
+}
+
+.about-intro{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  margin-bottom:50px;
+}
+
+.about-section{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:30px;
+}
+
+.about-box{
+  padding:30px;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-box h2{
+  margin-bottom:15px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 20px;
+  }
+
+  .about-intro {
+    font-size: 16px;
+  }
+}

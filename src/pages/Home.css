@@ -1,0 +1,125 @@
+.home{
+  font-family: Arial, sans-serif;
+}
+
+/* HERO SECTION */
+
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:60px 80px;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+}
+
+.hero-text{
+  max-width:500px;
+}
+
+.hero-text h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+
+.shop-btn{
+  padding:12px 25px;
+  font-size:18px;
+  background:#00aaff;
+  border:none;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+}
+
+.shop-btn:hover{
+  background:#008ecc;
+}
+
+.hero-image{
+  width:420px;
+  border-radius:10px;
+}
+
+
+/* FEATURED GPU SECTION */
+
+.featured{
+  padding:60px;
+  text-align:center;
+}
+
+.featured h2{
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.gpu-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.gpu-card{
+  background:white;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  padding:20px;
+  transition:0.3s;
+}
+
+.gpu-card:hover{
+  transform:translateY(-10px);
+}
+
+.gpu-card img{
+  width:100%;
+  border-radius:10px;
+  height:180px;
+  object-fit:cover;
+}
+
+.gpu-card h3{
+  margin-top:15px;
+}
+
+@media (max-width: 768px) {
+
+  /* HERO SECTION */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .shop-btn {
+    width: 100%;
+  }
+
+  /* FEATURED SECTION */
+  .featured {
+    padding: 30px 20px;
+  }
+
+  .gpu-grid {
+    grid-template-columns: 1fr; /* single column */
+  }
+}
